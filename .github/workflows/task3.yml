@@ -70,5 +70,5 @@ jobs:
           # Комітимо і пушимо зміни прямо в гілку пул-реквесту
           git add README.md
           git commit -m "docs: add build status badge to README [skip ci]"
-          git push
+          git push origin HEAD:main
         fi
