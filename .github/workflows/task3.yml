@@ -67,8 +67,13 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
-          # Комітимо і пушимо зміни прямо в гілку пул-реквесту
+          # Комітимо зміни локально на віртуальній машині
           git add README.md
           git commit -m "docs: add build status badge to README [skip ci]"
+          
+          # ОНОВЛЕННЯ: Спершу затягуємо свіжі зміни з сервера, щоб синхронізуватися
+          git pull origin main --rebase
+          
+          # Тепер спокійно пушимо в main
           git push origin HEAD:main
         fi
