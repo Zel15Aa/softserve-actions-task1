@@ -27,6 +27,8 @@ jobs:
 
     # 4. Запускаємо тести з перевіркою покриття (fail, якщо < 70%)
     - name: Run tests with pytest and coverage
+      env:
+        PYTHONPATH: .
       run: |
         pytest --cov=myapp tests/ --cov-fail-under=70 --cov-report=term-missing --cov-report=xml
 
